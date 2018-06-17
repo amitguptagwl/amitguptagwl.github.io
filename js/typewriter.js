@@ -1,67 +1,105 @@
-var TxtType = function(toRotate, period) {
-    this.toRotate = toRotate;
-    this.el = $('#description');
-    this.loopNum = 0;
-    this.period = period || 2000;
-    //this.period = speed;
-    this.txt = '';
-    this.isDeleting = false;
-    this.tick();
+var speed = 120;
+var interval = 2000;
+var delay = 100;
+
+var typingSpeedArr = [];
+var deleteSpeedArr = [];
+
+var rotate = true;
+var shouldDelete = true;
+
+var targetEl = $("#typetext");
+
+var deleteText = function() {
+    var txt = targetEl.text();
+    if(txt.length === 0){
+        typeNext();
+    }else{
+        txt = currentLine().substring(0, txt.length - 1);
+        targetEl.text(txt);
+        setTimeout(function() {
+            deleteText();
+        }, deleteSpeedArr[ currentLineIndex ]);
+    }
 };
 
-TxtType.prototype.tick = function() {
- 
-    var i = this.loopNum % this.toRotate.length;
-    var fullTxt = this.toRotate[i];
-
-    var delta = this.period;
-    if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-        delta = this.period / 2;
-    } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
-        //delta = 200 - Math.random() * 10;
-        var delta = this.period - fullTxt.length;
-    }
-
-    if(delta < 0){
-        delta = 5;
-    }
-
-    $("#typetext").text(this.txt);
-    var that = this;
-
-    if (!this.isDeleting && this.txt === fullTxt) {
-        delta = deleteInterval;
-        this.isDeleting = true;
-    } else if (this.isDeleting && this.txt === '') {
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 500;
-    }
-
-    setTimeout(function() {
-        that.tick();
-    }, delta);
-};
-
-function startTyping() {
-    var lines = txtArr;
-    for (var i=0; i<lines.length; i++) {
-        if (lines.length > 0) {
-          new TxtType(lines, speed);
+var typeText = function() {
+    var txt = targetEl.text();
+    var cLine = currentLine();
+    if(cLine){
+        if(txt.length === cLine.length){
+            if(shouldDelete){
+                setTimeout(function() {
+                    deleteText();
+                }, interval);
+            }else{
+                typeNext();
+            }
+        }else{
+            txt = cLine.substring(0, txt.length + 1);
+            targetEl.text(txt);
+            setTimeout(function() {
+                typeText();
+            }, typingSpeedArr[ currentLineIndex ] );
         }
     }
 };
 
-setTimeout(startTyping, 1000);
-var txtArr = [
+var currentLineIndex = 0;
+
+function nextLine(){
+    return lines[ currentLineIndex++ ];
+}
+
+function currentLine(){
+    if(currentLineIndex === lines.length){
+        if(rotate) currentLineIndex = 0;
+        else return;
+    }
+    return lines[ currentLineIndex ];
+}
+
+function startTyping() {
+
+    for(var i = 0; i < lines.length; i++){
+        var line = lines[i];
+        typingSpeedArr.push( speed - line.length );
+        if( typingSpeedArr[i] < 1 ) typingSpeedArr[i] = 2;
+
+        deleteSpeedArr.push( (speed / 2)  - line.length );
+        if( deleteSpeedArr[i] < 1 ) deleteSpeedArr[i] = 2;
+    }
+    typeNext();
+};
+
+
+function typeNext(){
+    var line = nextLine();
+    line && (
+        setTimeout(function() {
+            targetEl.text('');
+            typeText() ;
+        }, interval)
+    );
+}
+
+var lines = [
     'Research Enthusiastic',
-    'Loves Art',
-    'Do Spelling Mistakes',
-    'Had worked in India, Japan, and United Kingdom',
     'Active Open Source Developer',
-    ''
+    'Security is on Priority',
+    'Not a big fan of Windows OS',
+    'Helped many developers for their first time opensource contribution',
+    'Had worked in India, Japan, and United Kingdom',
+    'Loves Regular Expressions and SQL',
+    'Prefers to write algorithms than supporting maintenance projects.',
+    'Loves Art',
+    'Less talkative but loves talking',
+    'Not much active on Facebook',
+    'I want to make a big collections of books. But don\'t have the pateince to read them',
+    'Supports more than 15 opensource projects',
+    'Prefer to work on Python, Node JS, and Java',
+    'Don\'t play games',
+    'I hate watching TV',
 ];
-var speed = 120;
-var deleteInterval = 2000;
+
+setTimeout(startTyping, delay);
