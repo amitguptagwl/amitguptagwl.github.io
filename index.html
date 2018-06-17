@@ -1,18 +1,99 @@
 <html>
     <head>
+            <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+            <link rel="stylesheet" type="text/css" href="css/jquery-confirm.min.css">
+            <link rel="stylesheet" type="text/css" href="css/speechbubble.css">
         <style>
             body{
                 margin: 0px;
                 background: #5fbc8c;
             }
-            #bg{
-                width: 60vw;
-                position: fixed;
+            #header{
+                height: 40vh;
+                margin: 40px;
             }
+            #bg{
+                width: 100%;
+            }
+            #description{
+                font-size: 1.4em;
+            }
+            @media only screen and (max-width: 650px) {
+                #description{
+                    font-size: 1em;
+                }
+                .blinking-caret{
+                    height: 20px;
+                }
+                div.speech{
+                    border: 4px solid #666;
+                }
+            }
+
+            @media only screen and (max-width: 850px) {
+                #description{
+                    font-size: 1.2em;
+                }
+                .blinking-caret{
+                    height: 25px;
+                }
+                div.speech{
+                    border: 6px solid #666;
+                }
+            }
+
+            .blinking-caret{
+                animation: caret 1s steps(1) infinite;
+                border-right: 0.08em solid;
+                padding-right: 1px;
+                height: 35px;
+            }
+            @keyframes caret {
+                50% {
+                    border-color: transparent;
+                }
+            }
+
+            /* .blinking-caret{
+                animation: blinker 1s linear infinite;
+                padding-right: 1px;
+                font-size: larger
+            }
+            @keyframes blinker {
+                50% {
+                    opacity: 0;
+                }
+            } */
+            
         </style>
     </head>
     <body>
             <!-- <h1>αɱιƚ ƙυɱαɾ ɠυρƚα</h1> -->
-            <img id="bg" src="imgs/bg.svg">
+            
+            <div class="container-fluid">
+                <div id="header" class="row">
+                    <div class="col-sm-5 col-md-6 d-flex justify-content-center h-100">
+                        <div id="description" class="speech row justify-content-center align-self-center form-inline">
+                                <span class="blinking-caret">
+                                    <span id="typetext" class="align-content-center"></span>
+                                </span>
+                                <!-- <span id="typetext" class="align-content-center"></span>
+                                <span class="blinking-caret"></span> -->
+                        </div>
+                        <div class="speech-down-arrow"></div>
+                    </div>
+                    <div class="col-sm-7 col-md-6 d-flex">
+                            <img id="bg" src="imgs/bg.svg">
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+            <script type="text/javascript" src="js/jquery-confirm.min.js"></script>
+            <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+            <script type="text/javascript" src="js/typewriter.js"></script>
+
+            <script>
+                
+            </script>
     </body>
 </html>
