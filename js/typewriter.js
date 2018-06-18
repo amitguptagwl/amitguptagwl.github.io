@@ -104,3 +104,7 @@ var lines = [
 ];
 
 setTimeout(startTyping, delay);
+
+$(".typetext").each(function(){
+    setTimeout(startTyping, delay);
+})
