@@ -13,10 +13,10 @@
             #bg-container{
                 height: 40vh;
             }
-            #bg-img{
+            /* #bg-img{
                 position: absolute;
                 bottom: 0px;
-            }
+            } */
             #description{
                 color: #888;
             }
@@ -25,44 +25,59 @@
                 padding-left: 0px;
             }
             
+            
         </style>
     </head>
     <body>
-            <div id="header" class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-5 col-xl-4 ">
-                        <div class="row" style="height: 50%">
-                            <div class="col-sm-12 col-md-6 col-lg-12 col-xl-12 d-flex justify-content-center h-100">
-                                <div id="description" class="speech row justify-content-center align-self-center form-inline">
-                                        <span class="blinking-caret">
-                                            <span id="typetext" class="align-content-center"></span>
-                                        </span>
-                                        <!-- <span id="typetext" class="align-content-center"></span>
-                                        <span class="blinking-caret"></span> -->
+            <div id="midscreen">
+                <div id="header" class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 col-lg-12 ">
+                            <div class="row" id="avator-side">
+                                <div class="col-sm-12 col-md-6 col-lg-6 d-flex justify-content-center h-100">
+                                    <div id="description" class="speech row justify-content-center align-self-center form-inline">
+                                            <span class="blinking-caret">
+                                                <span id="typetext" class="align-content-center"></span>
+                                            </span>
+                                    </div>
                                 </div>
+                                <div id="bg-container" class="col-sm-12 col-md-6 col-lg-6 ">
+                                    <img id="bg-img" src="imgs/bg.svg">
+                                    
+                                </div>
+                                <svg id="table" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="100%" height="33px">
+                                    <rect id="rect1" x="0" y="0" width="100%" height="8" style="fill: rgb(10, 31, 45);"></rect>
+                                    <rect id="rect2" x="0" y="8" width="100%" height="25" style="fill: #4f6d7b;"></rect>
+                                </svg>
                             </div>
-                            <div id="bg-container" class="col-sm-12 col-md-6 col-lg-12 col-xl-12">
-                                <img id="bg-img" src="imgs/bg.svg">
-                                
-                            </div>
-                            <svg id="table" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="100%" height="33px">
-                                <rect id="rect1" x="0" y="0" width="100%" height="8" style="fill: rgb(10, 31, 45);"></rect>
-                                <rect id="rect2" x="0" y="8" width="100%" height="25" style="fill: #4f6d7b;"></rect>
-                            </svg>
                         </div>
-                        <!-- <div class="speech-down-arrow"></div> -->
+                        <div class="col-sm-12 col-md-12 col-lg-12 no-pl">
+                                <workscenery></workscenery>
+                        </div>
                     </div>
-                    <div class="col-sm-12 col-md-12 col-lg-7 col-xl-8 no-pl">
-                            <workscenery></workscenery>
+                    
+                </div>
+            </div>
+            <div class="container-fluid" id="bigscreen">
+                <div class="row">
+                    <div class="col-lg-8">
+                        
+                        <workscenery></workscenery>
+                    </div>
+                    <div class="col-lg-4">
+                        <div id="avatar-container">
+                            <div id="description" class="speech row justify-content-center align-self-center form-inline">
+                                    <span class="blinking-caret">
+                                        <span id="typetext" class="align-content-center"></span>
+                                    </span>
+                            </div>
+                            <img id="bg-img" src="imgs/bg.svg">
+                        </div>
                     </div>
                 </div>
-                
             </div>
+        
             
-            
-            <footer style="width:100vw; height:10vh;">
-
-            </footer>
             <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
             <script type="text/javascript" src="js/jquery-confirm.min.js"></script>
             <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>

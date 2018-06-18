@@ -8,10 +8,15 @@
         margin-top: 40px;
     }
     #bg-img{
-        width: 80%;
+        width: 50%;
+        position: absolute;
+        bottom: 0px;
     }
     #description{
         font-size: 0.8em;
+    }
+    #bigscreen{
+        display: none;
     }
  }
 
@@ -25,10 +30,15 @@
         margin-top: 40px;
     }
     #bg-img{
-        width: 80%;
+        width: 50%;
+        position: absolute;
+        bottom: 0px;
     }
     #description{
         font-size: 1em;
+    }
+    #bigscreen{
+        display: none;
     }
  }
 
@@ -44,16 +54,31 @@
     }
     #bg-img{
         width: 80%;
+        position: absolute;
+        bottom: 0px;
+        right: 0px
+    }
+    #bg-container{
+        height: 40vh;
+        position: absolute;
+        bottom: 32px;
+        right: 0px
     }
     #description{
         font-size: 1.2em;
+    }
+    #midscreen{
+        display: block;
+    }
+    #bigscreen{
+        display: none;
     }
  }
 
 /*  Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { /*lg*/
     #header{
-        height: calc(80vh - 40px);
+        height: 60vh;
     }
     div.speech{
         border: 4px solid #666;
@@ -62,9 +87,24 @@
     }
     #bg-img{
         width: 80%;
+        position: absolute;
+        bottom: 0px;
+        right: 0px
+    }
+    #bg-container{
+        height: 40vh;
+        position: absolute;
+        bottom: 32px;
+        right: 0px
     }
     #description{
         font-size: 1.4em;
+    }
+    #midscreen{
+        display: block;
+    }
+    #bigscreen{
+        display: none;
     }
  }
 
@@ -72,6 +112,24 @@
 @media (min-width: 1200px) { /*xl*/
     #header{
         height: calc(80vh - 40px);
+    }
+    #midscreen{
+        display: none;
+    }
+    #bg-img{
+        width: 80%;
+        position: relative;
+    }
+    #bigscreen{
+        display: block;
+    }
+    #avatar-container{
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+    }
+    #scenery {
+        height: 100%;
     }
  }
 
