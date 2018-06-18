@@ -4,6 +4,7 @@ div.speech {
     width: 80%;
     text-align: center;
     background-color: #fff;
+    height: 200px;
     border: 8px solid #666;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
