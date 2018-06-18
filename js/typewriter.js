@@ -86,20 +86,21 @@ function typeNext(){
 var lines = [
     'Research Enthusiastic',
     'Active Open Source Developer',
-    'Security is on Priority',
+    'Security is Priority',
     'Not a big fan of Windows OS',
-    'Helped many developers for their first time opensource contribution',
-    'Had worked in India, Japan, and United Kingdom',
+    'Helping many developers in opensource contribution',
+    'Have worked in India, Japan, and England',
     'Loves Regular Expressions and SQL',
     'Prefers to write algorithms than supporting maintenance projects.',
-    'Loves Art',
     'Less talkative but loves talking',
     'Not much active on Facebook',
     'I want to make a big collections of books. But don\'t have the pateince to read them',
-    'Supports more than 15 opensource projects',
+    'Supporting many opensource projects',
     'Prefer to work on Python, Node JS, and Java',
     'Don\'t play games',
     'I hate watching TV',
+    'I would be happy to know more about you',
+    'My contact detail is behind the computer screen',
 ];
 
 setTimeout(startTyping, delay);
