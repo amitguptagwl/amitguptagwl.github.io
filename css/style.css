@@ -1,0 +1,88 @@
+@media (max-width: 576px) { /*sm*/
+    #header{
+        height: 40vh;
+    }
+    div.speech{
+        border: 4px solid #666;
+        height: 200px;
+        margin-top: 40px;
+    }
+    #bg-img{
+        width: 80%;
+    }
+    #description{
+        font-size: 0.8em;
+    }
+ }
+
+@media (min-width: 576px) { /*sm*/
+    #header{
+        height: 60vh;
+    }
+    div.speech{
+        border: 4px solid #666;
+        height: 200px;
+        margin-top: 40px;
+    }
+    #bg-img{
+        width: 80%;
+    }
+    #description{
+        font-size: 1em;
+    }
+ }
+
+/*  Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { /*md*/
+    #header{
+        height: 60vh;
+    }
+    div.speech{
+        border: 4px solid #666;
+        height: 200px;
+        margin-top: 40px;
+    }
+    #bg-img{
+        width: 80%;
+    }
+    #description{
+        font-size: 1.2em;
+    }
+ }
+
+/*  Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { /*lg*/
+    #header{
+        height: calc(80vh - 40px);
+    }
+    div.speech{
+        border: 4px solid #666;
+        height: 200px;
+        margin-top: 40px;
+    }
+    #bg-img{
+        width: 80%;
+    }
+    #description{
+        font-size: 1.4em;
+    }
+ }
+
+/*  Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { /*xl*/
+    #header{
+        height: calc(80vh - 40px);
+    }
+ }
+
+ .blinking-caret{
+    animation: caret 1s steps(1) infinite;
+    border-right: 0.08em solid;
+    padding-right: 1px;
+    height: 35px;
+}
+@keyframes caret {
+    50% {
+        border-color: transparent;
+    }
+}
