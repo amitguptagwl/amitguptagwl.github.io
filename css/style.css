@@ -117,13 +117,14 @@
         display: none;
     }
     #bg-img{
-        width: 80%;
+        width: 100%;
         position: relative;
     }
     #bigscreen{
         display: block;
     }
     #avatar-container{
+        width: 80%;
         position: absolute;
         bottom: 0px;
         right: 0px;
