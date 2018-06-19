@@ -1732,11 +1732,15 @@
     </svg>
     <script>
 
+        var alreadyDisplaying = false;
+        
         this.displayCallout = function(e){
             for( var el_i in e.path){
                 if(e.path[ el_i].tagName === 'a'){
                     var targetCalloutId = $(e.path[ el_i]).attr("for");
-                    this.refs[ targetCalloutId ].setAttribute("visibility", "visible")
+                    this.refs[ targetCalloutId ].setAttribute("visibility", "visible");
+                    alreadyDisplaying = true;
+                    break;
                 }
             }
             //console.log(e.target.getAttribute("visibility"));
@@ -1746,23 +1750,47 @@
             for( var el_i in e.path){
                 if(e.path[ el_i].tagName === 'a'){
                     var targetCalloutId = $(e.path[ el_i]).attr("for");
-                    this.refs[ targetCalloutId ].setAttribute("visibility", "hidden")
+                    this.refs[ targetCalloutId ].setAttribute("visibility", "hidden");
+                    alreadyDisplaying = false;
+                    break;
                 }
             }
         }
-
+        var callouts = [];
         this.on('mount', function(){
             //bind an on hover event
             $(".svg-callout-container").attr("visibility", "hidden");
-            /* $(".callout-handler").hover(function(e){
-                console.log("in")
-                var targetCalloutId = $(this).attr("for");
-                $("#"+targetCalloutId).attr("visibility", "visible");
-            })
-            $(".callout-handler").mouseout(function(e){
-                console.log("out")
-                $(".svg-callout-container").attr("visibility", "hidden");
-            }) */
+            callouts = Object.keys(this.refs);
+            setTimeout(displayRandomCallout, 2000);
+            
         });
+
+        var tag= this;
+        var calloutIndex = 0;
+        function nextCalloutIndex(){
+            if(calloutIndex === callouts.length){
+                calloutIndex = 0;
+            }
+            return calloutIndex++
+        }
+
+        function displayRandomCallout(){
+            if(!alreadyDisplaying){
+                var index = nextCalloutIndex();
+                alreadyDisplaying = true;
+                tag.refs[ callouts[ index ] ].setAttribute("visibility", "visible");
+            
+                setTimeout(function(){
+                    hideRandomCallout(index);
+                }, 2000);
+            }
+
+            setTimeout(displayRandomCallout, 7000);
+        }
+
+        function hideRandomCallout(index){
+            tag.refs[ callouts[ index ] ].setAttribute("visibility", "hidden");
+            alreadyDisplaying = false;
+        }
     </script>
 </workscenery>
