@@ -61,7 +61,7 @@
  }
 
 /*  Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { /*xl*/
+@media (min-width: 1420px) { /*xl*/
     #header{
         height: calc(80vh - 40px);
     }
@@ -76,7 +76,7 @@
         display: block;
     }
     #avatar-container{
-        width: 80%;
+        width: 25%;
         position: absolute;
         bottom: 0px;
         right: 0px;
