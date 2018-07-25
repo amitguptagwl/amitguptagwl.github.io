@@ -5,7 +5,8 @@ function shabdawali(targetEl, opts ){
     var onLine = opts.onLineChange || function(){};
 
     var speed = 120;
-    var interval = 2000;
+    var timeToReadAWord = 80;
+    var intervalBetween2Lines = 2000;
     var delay = 100;
 
     var typingSpeedArr = [];
@@ -26,7 +27,7 @@ function shabdawali(targetEl, opts ){
             targetEl.text(txt);
             setTimeout(function() {
                 deleteText(cLine);
-            }, deleteSpeedArr[ currentLineIndex ]);
+            }, deleteSpeedArr[ currentLineIndex -1 ]);
         }
     };
 
@@ -36,9 +37,12 @@ function shabdawali(targetEl, opts ){
         if(cLine){
             if(txt.length === cLine.length){//complete line has been typed
                 if(shouldDelete){
+                    var gape = timeToReadAWord * (cLine.length / 4);
+                    if(gape < 2000) gape = 2000;
+                    
                     setTimeout(function() {
                         deleteText(cLine);
-                    }, interval);
+                    }, gape );
                 }else{
                     typeNext();
                 }
@@ -69,8 +73,9 @@ function shabdawali(targetEl, opts ){
 
         for(var i = 0; i < lines.length; i++){
             var line = lines[i];
-            typingSpeedArr.push( speed - line.length );
-            if( typingSpeedArr[i] < 1 ) typingSpeedArr[i] = 2;
+           /*  typingSpeedArr.push( speed - line.length );
+            if( typingSpeedArr[i] < 1 ) typingSpeedArr[i] = 4; */
+            typingSpeedArr[i] = 50;
 
             deleteSpeedArr.push( (speed / 2)  - line.length );
             if( deleteSpeedArr[i] < 1 ) deleteSpeedArr[i] = 2;
@@ -85,7 +90,7 @@ function shabdawali(targetEl, opts ){
             setTimeout(function() {
                 targetEl.text('');
                 typeText(line) ;
-            }, interval)
+            }, intervalBetween2Lines)
         );
     }
     
