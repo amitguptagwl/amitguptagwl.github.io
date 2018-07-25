@@ -1,183 +1,525 @@
 <html>
     <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121064523-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-121064523-1');
-</script>
-
             <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
             <link rel="stylesheet" type="text/css" href="css/jquery-confirm.min.css">
-            <link rel="stylesheet" type="text/css" href="css/style.css">
-            <link rel="stylesheet" type="text/css" href="css/speechbubble.css">
+            <link rel="stylesheet" type="text/css" href="css/kb.css">
+            <link rel="stylesheet" type="text/css" href="css/fontello.css">
         <style>
-            body{
-                margin: 0px;
-                background: #94d86a;
+            #mainNav{
+                height: 50px;
+                background-color: #101010;
+                position: fixed;
+                z-index: 10;
+                width: 100vw;
             }
-            #table{
-                z-index: 2;
+            #about{
+                height: calc(100vh - 20px);
+                background-color: #101010;
+                color: white;
             }
-            #description{
-                color: #888;
+            #menu{
+                margin: 10px;
+            }
+            #menu a{
+                display: inline;
+                padding: 10px;
+                cursor: pointer;
+                color: gray;
+            }
+            #menu a:hover{
+                color: white;
+            }
+            #shabdawali{
+                text-align: center;
+                font-size: xx-large;
+            }
+            #keyboard{
+                /* color: #101010; */
+            }
+            .work .row{
+                margin: 30px;
+            }
+            .work{
+                background-color: #0ea6c1;
+            }
+            .supporter{
+                background-color: #101010;
+                color: white;
+            }
+            .card {
+                border: 1px solid cadetblue;
+            }
+            .card-img{
+                text-align: center;
+                margin: 20px 0;
+            }
+            .card-title{
+                font-weight: bold;
+            }
+            .card-img img{
+                height: 150px;
+            }
+            section{
+                padding: 100px 0; 
+            }
+            .dark-heading{
+                color: #484848; 
+                padding-left: 30px;
+            }
+            ul.list-inline{
+                display: inline-flex;
+            }
+            ul.list-inline li{
+                font-size: 1.5em;
+                margin: 10px;
+            }
+            ul.list-inline li a{
+                color: white;
             }
         </style>
     </head>
     <body>
+            <!-- <h1>αɱιƚ ƙυɱαɾ ɠυρƚα</h1> -->
+            <!-- <img id="bg" src="imgs/bg.svg"> -->
+            <div id="mainNav" class="container-fluid">
+                <!-- <div class="float-right">
+                    <ul id="menu">
+                        <a href="#about">About</a>
+                        <a href="#work">Work</a>
+                        <a href="#supporters">Supporters</a>
+                        <a href="#contact">Contact</a>
+                    </ul>
+                </div> -->
 
-<!-- Don't delete this SVG defs. Otherwise I'll loose my head from the second SVG -->
-
-    <svg viewBox="0 0 214.1289520263672 131.2224884033203" version="1.1" xmlns="http://www.w3.org/2000/svg"
-            x="0px" y="0px" style="enable-background:new 0 0 335.99 235.19;"  xmlns:xlink="http://www.w3.org/1999/xlink"
-            width="0", height="0">
-            <radialGradient id="gradient-8" cx="166.9306" cy="97.1635" r="26.7027" gradientTransform="matrix(0.9997 0.0261 -0.0359 1.3782 3.5493 -41.1037)"
-            gradientUnits="userSpaceOnUse">
-            <stop offset="1.429818e-03" style="stop-color:#FCE1D3" />
-            <stop offset="0.5236" style="stop-color:#FCDFD1" />
-            <stop offset="0.7117" style="stop-color:#F9D9CA" />
-            <stop offset="0.8458" style="stop-color:#F3CEBE" />
-            <stop offset="0.9534" style="stop-color:#ECBEAC" />
-            <stop offset="1" style="stop-color:#E7B5A2" />
-        </radialGradient>
-        <g transform="matrix(1, 0, 0, 1, -86.6776451486349, -76.69535296232716)">
-
-            <radialGradient id="gradient-1" cx="166.9306" cy="97.1635" r="26.7027" gradientTransform="matrix(1.0000004954307502, 0.008902398221464908, -0.02434791608461627, 2.753063364437369, 2.3767140374011615, -171.81942062968767)"
-                gradientUnits="userSpaceOnUse">
-
-                <stop offset="0.5236" style="stop-color:#FCDFD1" />
-                <stop offset="0.7117" style="stop-color:#F9D9CA" />
-                <stop offset="0.8458" style="stop-color:#F3CEBE" />
-                <stop offset="0.9534" style="stop-color:#ECBEAC" />
-                <stop offset="1" style="stop-color:#E7B5A2" />
-            </radialGradient>
-            <linearGradient id="gradient-2" gradientUnits="userSpaceOnUse" x1="187.9271" y1="92.2929" x2="190.7042" y2="92.2929">
-                <stop offset="1.429818e-03" style="stop-color:#FCE1D3" />
-                <stop offset="0.3343" style="stop-color:#FBDED0" />
-                <stop offset="0.5928" style="stop-color:#F7D5C6" />
-                <stop offset="0.8256" style="stop-color:#EFC6B4" />
-                <stop offset="1" style="stop-color:#E7B5A2" />
-            </linearGradient>
-            <linearGradient id="gradient-3" gradientUnits="userSpaceOnUse" x1="144.0675" y1="92.2855" x2="147.7845" y2="92.2855">
-                <stop offset="1.429818e-03" style="stop-color:#FCE1D3" />
-                <stop offset="0.2988" style="stop-color:#FBDDCF" />
-                <stop offset="0.5824" style="stop-color:#F6D3C3" />
-                <stop offset="0.8597" style="stop-color:#EDC1AF" />
-                <stop offset="1" style="stop-color:#E7B5A2" />
-            </linearGradient>
-            <linearGradient id="gradient-4" gradientUnits="userSpaceOnUse" x1="168.3688" y1="128.3898" x2="168.3688" y2="114.4368">
-
-                <stop offset="1.429818e-03" style="stop-color:#FCE1D3" />
-                <stop offset="0.3386" style="stop-color:#FBDED0" />
-                <stop offset="0.5949" style="stop-color:#F7D5C6" />
-                <stop offset="0.8237" style="stop-color:#EFC6B5" />
-                <stop offset="1" style="stop-color:#E7B5A2" />
-            </linearGradient>
-            <g>
-                <radialGradient id="gradient-5" cx="157.3575" cy="91.3829" r="2.1344" gradientUnits="userSpaceOnUse">
-                    <stop offset="1.429818e-03" style="stop-color:#4E5B5F" />
-                    <stop offset="0.2241" style="stop-color:#4C595D" />
-                    <stop offset="0.3971" style="stop-color:#465459" />
-                    <stop offset="0.5534" style="stop-color:#3D4B51" />
-                    <stop offset="0.6997" style="stop-color:#303F48" />
-                    <stop offset="0.8392" style="stop-color:#21303B" />
-                    <stop offset="0.9718" style="stop-color:#0F222F" />
-                    <stop offset="1" style="stop-color:#0A1F2D" />
-                </radialGradient>
-                <radialGradient id="gradient-6" cx="177.767" cy="91.3829" r="2.1344" gradientUnits="userSpaceOnUse">
-                    <stop offset="1.429818e-03" style="stop-color:#4E5B5F" />
-                    <stop offset="0.2241" style="stop-color:#4C595D" />
-                    <stop offset="0.3971" style="stop-color:#465459" />
-                    <stop offset="0.5534" style="stop-color:#3D4B51" />
-                    <stop offset="0.6997" style="stop-color:#303F48" />
-                    <stop offset="0.8392" style="stop-color:#21303B" />
-                    <stop offset="0.9718" style="stop-color:#0F222F" />
-                    <stop offset="1" style="stop-color:#0A1F2D" />
-                </radialGradient>
-                
-            </g>
-            <radialGradient id="gradient-7" cx="167.2864" cy="68.3461" r="22.0937" gradientUnits="userSpaceOnUse">
-
-            </radialGradient>
-
-        </g>
-        <switch transform="matrix(1, 0, 0, 1, -79.29309844970703, -51.71393966674805)">
-            <foreignObject requiredExtensions="&amp;ns_ai;" x="0" y="0" width="1" height="1">
-
-            </foreignObject>
-            <g>
-                <linearGradient id="SVGID_8_" gradientUnits="userSpaceOnUse" x1="117.2614" y1="182.646" x2="117.2614" y2="116.2924">
-                    <stop offset="0" style="stop-color:#FFFFFF;stop-opacity:0" />
-                    <stop offset="1" style="stop-color:#FFFFFF" />
-                </linearGradient>
-                
-            </g>
-        </switch>
-</svg>
-
-
-            <div id="midscreen">
-                <div id="header" class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-12 ">
-                            <div class="row" id="avator-side">
-                                <div class="col-sm-12 col-md-6 col-lg-6 d-flex justify-content-center h-100">
-                                    <div id="description" class="speech row justify-content-center align-self-center form-inline">
-                                            <span class="blinking-caret">
-                                                <typewriter></typewriter>
-                                            </span>
-                                    </div>
-                                </div>
-                                <div id="bg-container" class="col-sm-12 col-md-6 col-lg-6 ">
-                                    <avatar></avatar>
-                                </div>
-                                <svg id="table" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="100%" height="33px">
-                                    <rect id="rect1" x="0" y="0" width="100%" height="8" style="fill: rgb(10, 31, 45);"></rect>
-                                    <rect id="rect2" x="0" y="8" width="100%" height="25" style="fill: #4f6d7b;"></rect>
-                                </svg>
+                <div class="row">
+                    <div class="footer-col col-md-4"></div>
+                    <div class="footer-col col-md-4"></div>
+                    <div class="footer-col col-md-4">
+                        <ul class="list-inline">
+                            <li>
+                                <a href="https://twitter.com/amitguptagwl" class="btn-social btn-outline"><i class="icon-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="http://stackoverflow.com/users/453767/amit-gupt" class="btn-social btn-outline"><i class="icon-stackoverflow"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/amitguptagwl" class="btn-social btn-outline"><i class="icon-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/amitguptagwl" class="btn-social btn-outline"><i class="icon-github-circled"></i></a>
+                            </li>
+                            <li>
+                                <a href="mailto:contact@amitkumargupta.work" class="btn-social btn-outline"><i class="icon-mail-alt"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <header id="about">
+                <div  class="container">
+                    <div class="row" style="height: 45%">
+                        <div class="col-12 d-flex justify-content-center align-items-center">
+                            <p id="shabdawali"></p>
+                        </div>
+                    </div>
+                    <div class="row" style="height: 45%">
+                        <div class="col-12 d-flex justify-content-center align-items-end" >
+                            <div>
+                                <ul id="keyboard" style="bottom: 0px">
+                                    <li class="symbol"><span class="off" for="ch`">`</span><span class="on" for="ch~">~</span></li>
+                                    <li class="symbol"><span class="off" for="ch1">1</span><span class="on" for="ch!">!</span></li>
+                                    <li class="symbol"><span class="off" for="ch2">2</span><span class="on" for="ch@">@</span></li>
+                                    <li class="symbol"><span class="off" for="ch3">3</span><span class="on" for="ch#">#</span></li>
+                                    <li class="symbol"><span class="off" for="ch4">4</span><span class="on" for="ch$">$</span></li>
+                                    <li class="symbol"><span class="off" for="ch5">5</span><span class="on" for="ch%">%</span></li>
+                                    <li class="symbol"><span class="off" for="ch6">6</span><span class="on" for="ch^">^</span></li>
+                                    <li class="symbol"><span class="off" for="ch7">7</span><span class="on" for="ch&">&amp;</span></li>
+                                    <li class="symbol"><span class="off" for="ch8">8</span><span class="on" for="ch*">*</span></li>
+                                    <li class="symbol"><span class="off" for="ch9">9</span><span class="on" for="ch(">(</span></li>
+                                    <li class="symbol"><span class="off" for="ch0">0</span><span class="on" for="ch)">)</span></li>
+                                    <li class="symbol"><span class="off" for="ch-">-</span><span class="on" for="ch_">_</span></li>
+                                    <li class="symbol"><span class="off" for="ch=">=</span><span class="on" for="ch+">+</span></li>
+                                    <li class="delete lastitem" for="chdel"><span>delete</span></li>
+                                    <li class="tab" ><span for="chtab">tab</span></li>
+                                    <li class="letter"  ><span for="chq">q</span></li>
+                                    <li class="letter"  ><span for="chw">w</span></li>
+                                    <li class="letter"  ><span for="che">e</span></li>
+                                    <li class="letter"  ><span for="chr">r</span></li>
+                                    <li class="letter"  ><span for="cht">t</span></li>
+                                    <li class="letter"  ><span for="chy">y</span></li>
+                                    <li class="letter"  ><span for="chu">u</span></li>
+                                    <li class="letter"  ><span for="chi">i</span></li>
+                                    <li class="letter"  ><span for="cho">o</span></li>
+                                    <li class="letter"  ><span for="chp">p</span></li>
+                                    <li class="symbol"><span class="off" for="ch[">[</span><span class="on" for="ch{" >{</span></li>
+                                    <li class="symbol"><span class="off" for="ch]">]</span><span class="on" for="ch}" >}</span></li>
+                                    <li class="symbol lastitem"><span class="off" for="ch\\">\</span><span class="on" for="ch|">|</span></li>
+                                    <li class="capslock">caps lock</li>
+                                    <li class="letter"  ><span for="cha" >a</span></li>
+                                    <li class="letter"  ><span for="chs" >s</span></li>
+                                    <li class="letter"  ><span for="chd" >d</span></li>
+                                    <li class="letter"  ><span for="chf" >f</span></li>
+                                    <li class="letter"  ><span for="chg" >g</span></li>
+                                    <li class="letter"  ><span for="chh" >h</span></li>
+                                    <li class="letter"  ><span for="chj" >j</span></li>
+                                    <li class="letter"  ><span for="chk" >k</span></li>
+                                    <li class="letter"  ><span for="chl" >l</span></li>
+                                    <li class="symbol"><span class="off" for="ch;">;</span><span class="on" for="ch:">:</span></li>
+                                    <li class="symbol"><span class="off" for="ch-single">'</span><span class="on" for='ch"'>&quot;</span></li>
+                                    <li class="return lastitem"><span>return</span></li>
+                                    <li class="left-shift"><span>shift</span></li>
+                                    <li class="letter"  ><span for="chz" >z</span></li>
+                                    <li class="letter"  ><span for="chx" >x</span></li>
+                                    <li class="letter"  ><span for="chc" >c</span></li>
+                                    <li class="letter"  ><span for="chv" >v</span></li>
+                                    <li class="letter"  ><span for="chb" >b</span></li>
+                                    <li class="letter"  ><span for="chn" >n</span></li>
+                                    <li class="letter"  ><span for="chm" >m</span></li>
+                                    <li class="symbol"><span class="off" for="ch," >,</span><span class="on"for="ch<" >&lt;</span></li>
+                                    <li class="symbol"><span class="off" for="ch." >.</span><span class="on"for="ch>" >&gt;</span></li>
+                                    <li class="symbol"><span class="off" for="ch/" >/</span><span class="on"for="ch?" >?</span></li>
+                                    <li class="right-shift lastitem"><span>shift</span></li>
+                                    <li class="space lastitem"  ><span for="ch ">&nbsp;</span></li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-12 col-lg-12">
-                                <workscenery></workscenery>
+                    </div>
+                </div>
+            </header>
+
+            <section class="work">
+                <div  class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-img">
+                                    <a href="https://github.com/NaturalIntelligence/Stubmatic">
+                                        <img clas="card-img-top" src="https://naturalintelligence.github.io/Stubmatic/img/stubmatic_logo.png">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title">Stubmatic</div>
+                                    <div class="card-text"> Mock HTTP calls without coding knowledge. Designed specially for QAs.</div>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <a href="https://github.com/NaturalIntelligence/fast-xml-parser">
+                                            <img clas="card-img-top" src="https://github.com/NaturalIntelligence/fast-xml-parser/raw/master/static/img/fxp_logo.png">
+                                        </a>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card-title">Fast XML Parser</div>
+                                        <div class="card-text">Parse XML to JS/JSON and vice versa without any dependency. Fastest option for backend and frontend.</div>  
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-img">
+                                    <a href="http://nimn.in/">
+                                        <img clas="card-img-top" src="http://nimn.in/img/nimn.svg">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title">निम्न (Nimn)</div>
+                                    <div class="card-text">It can save upto 85% of space / bandwidth in comparison of XML or JSON data.</div>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                
+                </div>
+            </section>
+            <section class="supporter">
+                <h1 class="dark-heading">Do you know?</h1>
+                <div  class="container">
+                    <div  class="row">
+                        <ul>
+                            <li>All projects mentioned above are FREE and OPEN SOURCE.</li>
+                            <li>Stubmatic can help you to mock binary responses as well.</li>
+                            <li>There are more than 10000 downloads per week of above projects.</li>
+                            <li>There are more than 4000 projests using above projects worldwild.</li>
+                        </ul>
+                    </div>
+                </div>
+                <h1 class="dark-heading">Supporters</h1>
+                <div  class="container">
+                    There is one anonymous backer supporting Fast XML parser.
+                </div>
+            </section>
+            <section class="work">
+                <div  class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-img">
+                                    <a href="http://nimn.in/">
+                                        <img clas="card-img-top" src="https://naturalintelligence.github.io/Stubmatic/img/stubmatic_logo.png">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title">शब्दावली (shabdawali)</div>
+                                    <div class="card-text">Jquery plugin, and Riotjs tag for amazing typing effects with mutplie options.</div>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <a href="https://github.com/amitguptagwl/fast-lorem-ipsum">Fast Lorem Ipsum</a>
+                                        </div>
+                                        <div class="card-text">Generate Lorem Ipsum so quickly.</div>  
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <a href="https://github.com/NaturalIntelligence/fastify-xml-body-parser">Fastify XML body parser</a>
+                                        </div>
+                                        <div class="card-text">XML body Parser for fastify framework.</div>  
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <a href="https://github.com/amitguptagwl/Java-Rule-Book">Java Rule Book</a>
+                                        </div>
+                                        <div class="card-text">Java concepts as one line rule  to answer any interview question.</div>  
+                                    </div>
+                                </div>
+
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-img">
+                                    <a href="https://github.com/NaturalIntelligence/anumargak">
+                                        <img clas="card-img-top" src="https://github.com/NaturalIntelligence/anumargak/raw/master/static/anumargak.png">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title">अनुमार्गक (Anumargak)</div>
+                                    <div class="card-text">Simple but Fastest Web Router for Nodejs web frameworks <br><br> </div>  
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
                 </div>
-            </div>
-            
-            <div class="container-fluid" id="bigscreen">
-                <div class="row">
-                        <workscenery></workscenery>
-                        <div id="avatar-container">
-                            <div id="description" class="speech row justify-content-center align-self-center form-inline">
-                                    <span class="blinking-caret">
-                                        <typewriter></typewriter>
-                                    </span>
-                            </div>
-                            <avatar></avatar>
-                        </div>
+            </section>
+            <section class="supporter">
+                <h1 class="dark-heading">Do you know?</h1>
+                <div  class="container">
+                    <div  class="row">
+                        <ul>
+                            <li>All projects mentioned above are FREE and OPEN SOURCE.</li>
+                            <li>शब्दावली (shabdawali) was created to design this portfolio.</li>
+                            <li>Fast Lorem Ipsum is 400+ times faster than popular options available in js.</li>
+                            <li>I created Java rule book to clear Java interviews.</li>
+                            <li>अनुमार्गक (Anumargak) is multiple times faster than available routers in node js.</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        
-            
+                <!-- <h1 class="dark-heading">Supporters</h1>
+                <div  class="container">
+                        There is no supporter for above projects currently.
+                </div> -->
+            </section>
+
+            <section class="work">
+                <div  class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-img">
+                                    <a href="http://imglab.ml">
+                                        <img clas="card-img-top" src="https://github.com/NaturalIntelligence/imglab/raw/master/img/imglab_logo.png">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title">Imglab</div>
+                                    <div class="card-text">An online image labeling tool to speed up and simplify image annotations. Supports multiple format. <br></div>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <a href="https://github.com/nimndata/nimnjs">Nimn js</a>
+                                    </div>
+                                    <div class="card-text">Node js implementation of निम्न (Nimn) data format for frontend and backend.</div>  
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <a href="https://github.com/nimndata/nimnjs-schema-builder">Nimn Schema Builder</a>
+                                    </div>
+                                    <div class="card-text">Build object structure from your js object automatically.</div>  
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <a href="https://github.com/NaturalIntelligence/Grapes">Grapes</a>
+                                    </div>
+                                    <div class="card-text">Flexible Regular Expression Engine.</div>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-img">
+                                    <a href="https://github.com/muneem4node/muneem">
+                                        <img clas="card-img-top" src="https://github.com/muneem4node/muneem/raw/master/static/muneem.png">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title">मुनीम (Muneem)</div>
+                                    <div class="card-text">The only web framework designed not only for developers but for whole team. Fast, secure and simple. <br></div>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="supporter">
+                <h1 class="dark-heading">Do you know?</h1>
+                <div  class="container">
+                    <div  class="row">
+                        <ul>
+                            <li>All projects mentioned above are FREE and OPEN SOURCE.</li>
+                            <li>You can annotate landmarks points on a face in just single click using <b>Imglab</b> .</li>
+                            <li>You can build the webserver with just 2 lines using मुनीम (Muneem) [excluding the business logic]</li>
+                            <li>When santization is not needed, Nimn js is faster than JSON stringify and parse methods..</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- <h1 class="dark-heading">Supporters</h1>
+                <div  class="container">
+                        There is no supporter for above projects currently.
+                </div> -->
+            </section>
+
+            <section class="work">
+                    <div  class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <a href="https://github.com/muneem4node/aalekh">
+                                            <img clas="card-img-top" src="https://github.com/muneem4node/aalekh/raw/master/static/img/aalekh_logo.png">
+                                        </a>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card-title">आलेख (Aalekh)</div>
+                                        <div class="card-text">An alternate of Swagger API documentation library for  मुनीम (Muneem) web framework<br></div>  
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <a href="https://github.com/NaturalIntelligence/wp-thumb-extractor">wp-thumb-extractor</a>
+                                        </div>
+                                        <div class="card-text">Wordpress plugin to extract thumbnails from blog posts.</div>  
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <a href="https://github.com/NaturalIntelligence/wp-thumb-post">wp-thumb-post</a>
+                                        </div>
+                                        <div class="card-text">Wordpress plugin to display recent, random, popular ... posts.</div>  
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <a href="https://github.com/NaturalIntelligence/floating-round-button">floating-round-button</a>
+                                        </div>
+                                        <div class="card-text">Floating round button for web.</div>  
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <a href="https://github.com/funcards/match-it">
+                                            <img clas="card-img-top" src="https://github.com/funcards/match-it/raw/master/static/img/matchit_logo.png">
+                                        </a>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card-title">Match it</div>
+                                        <div class="card-text">Your own spot it like card game generator with extra levels<br><br></div>  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="supporter">
+                    <h1 class="dark-heading">Do you know?</h1>
+                    <div  class="container">
+                        <div  class="row">
+                            <ul>
+                                <li>All projects mentioned above are FREE and OPEN SOURCE.</li>
+                                <li><b>Match it</b> application can save a lot of money. More than 20-30 decs per week are being generated worldwild.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- <h1 class="dark-heading">Supporters</h1>
+                    <div  class="container">
+                            There is no supporter for above projects currently.
+                    </div> -->
+                </section>
+           
             <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
             <script type="text/javascript" src="js/jquery-confirm.min.js"></script>
             <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
-            <script type="text/javascript" src="js/typewriter.js"></script>
-            <script type="text/javascript" src="js/riot.min.js"></script>
-            <script type="text/javascript" src="js/riot+compiler.min.js"></script>
 
-            <script src="tags/workscenery.tag.html" type="riot/tag"></script> 
-            <script src="tags/typewriter.tag.html" type="riot/tag"></script> 
-            <script src="tags/avatar.tag.html" type="riot/tag"></script> 
+            <script type="text/javascript" src="js/typewriter.js"></script>
+            <script src="tags/shabdawali.js"></script> 
 
             <script>
-                riot.mount('workscenery, avatar');
-                riot.mount('typewriter', { lines : lines});
-            </script>
+                var lettersWithShift = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "{", "}", "|", "<", "?", ">", ":", "'", "\"" ];
+                shabdawali($("#shabdawali"), {
+                    lines : lines,
+                    onCharChange : function(char){
+                        $("#keyboard .keyPressed").removeClass("keyPressed");
+                        if(lettersWithShift.indexOf(char) !== -1){
+                            $("#keyboard li.left-shift").addClass("keyPressed");
+                        }
+                        if(char === "BS"){
+                            $("#keyboard li.delete").addClass("keyPressed");
+                        }else if(char === "DEL"){
+                            $("#keyboard li.delete").addClass("keyPressed");
+                        }else if(char === "CR"){
+                            $("#keyboard li.return").addClass("keyPressed");
+                        }else{
+                            if(char.indexOf("'") === -1) 
+                                $("[for='ch"+char+"']").parent("li").addClass("keyPressed");
+                        }
 
+                        setTimeout(function(){
+                            $("#keyboard .keyPressed").removeClass("keyPressed");
+                        },500);
+                    },
+                    onLineChange : function(){
+                        $("#keyboard li.return").addClass("keyPressed");
+                        setTimeout(function(){
+                            $("#keyboard .keyPressed").removeClass("keyPressed");
+                        },400);
+                    },
+                });
+            </script>
     </body>
 </html>
