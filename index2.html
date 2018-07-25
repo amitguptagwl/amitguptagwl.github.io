@@ -1,0 +1,325 @@
+<html>
+    <head>
+            <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+            <link rel="stylesheet" type="text/css" href="css/jquery-confirm.min.css">
+            <link rel="stylesheet" type="text/css" href="kb/css/kb.css">
+        <style>
+            #mainNav{
+                height: 50px;
+                background-color: #101010;
+                position: fixed;
+                z-index: 10;
+                width: 100vw;
+            }
+            #about{
+                height: calc(100vh - 50px);
+                background-color: #101010;
+                color: white;
+            }
+            #menu{
+                margin: 10px;
+            }
+            #menu a{
+                display: inline;
+                padding: 10px;
+                cursor: pointer;
+                color: gray;
+            }
+            #menu a:hover{
+                color: white;
+            }
+            #shabdawali{
+                text-align: center;
+                font-size: xx-large;
+            }
+            #keyboard{
+                /* color: #101010; */
+            }
+            .work .row{
+                margin: 30px;
+            }
+            .work{
+                background-color: aqua;
+            }
+            .supporter{
+                background-color: #101010;
+                color: white;
+            }
+            .card {
+                border: 1px solid cadetblue;
+            }
+            .card-img{
+                text-align: center;
+                margin: 20px 0;
+            }
+            .card-title{
+                font-weight: bold;
+            }
+            .card-img img{
+                height: 150px;
+            }
+            section{
+                padding: 100px 0; 
+            }
+            .dark-heading{
+                color: #484848; 
+                padding-left: 30px;
+            }
+        </style>
+    </head>
+    <body>
+            <!-- <h1>αɱιƚ ƙυɱαɾ ɠυρƚα</h1> -->
+            <!-- <img id="bg" src="imgs/bg.svg"> -->
+            <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+                <div class="float-right">
+                    <ul id="menu">
+                        <a href="#about">About</a>
+                        <a href="#work">Work</a>
+                        <a href="#supporters">Supporters</a>
+                        <a href="#contact">Contact</a>
+                    </ul>
+                </div>
+            </nav>
+            <header id="about">
+                <div  class="container">
+                    <div class="row" style="height: 45%">
+                        <div class="col-12 d-flex justify-content-center align-items-center">
+                            <p id="shabdawali"></p>
+                        </div>
+                    </div>
+                    <div class="row" style="height: 45%">
+                        <div class="col-12 d-flex justify-content-center align-items-end" >
+                            <div>
+                                <ul id="keyboard" style="bottom: 0px">
+                                    <li class="symbol"><span class="off" for="ch`">`</span><span class="on" for="ch~">~</span></li>
+                                    <li class="symbol"><span class="off" for="ch1">1</span><span class="on" for="ch!">!</span></li>
+                                    <li class="symbol"><span class="off" for="ch2">2</span><span class="on" for="ch@">@</span></li>
+                                    <li class="symbol"><span class="off" for="ch3">3</span><span class="on" for="ch#">#</span></li>
+                                    <li class="symbol"><span class="off" for="ch4">4</span><span class="on" for="ch$">$</span></li>
+                                    <li class="symbol"><span class="off" for="ch5">5</span><span class="on" for="ch%">%</span></li>
+                                    <li class="symbol"><span class="off" for="ch6">6</span><span class="on" for="ch^">^</span></li>
+                                    <li class="symbol"><span class="off" for="ch7">7</span><span class="on" for="ch&">&amp;</span></li>
+                                    <li class="symbol"><span class="off" for="ch8">8</span><span class="on" for="ch*">*</span></li>
+                                    <li class="symbol"><span class="off" for="ch9">9</span><span class="on" for="ch(">(</span></li>
+                                    <li class="symbol"><span class="off" for="ch0">0</span><span class="on" for="ch)">)</span></li>
+                                    <li class="symbol"><span class="off" for="ch-">-</span><span class="on" for="ch_">_</span></li>
+                                    <li class="symbol"><span class="off" for="ch=">=</span><span class="on" for="ch+">+</span></li>
+                                    <li class="delete lastitem" for="chdel"><span>delete</span></li>
+                                    <li class="tab" ><span for="chtab">tab</span></li>
+                                    <li class="letter"  ><span for="chq">q</span></li>
+                                    <li class="letter"  ><span for="chw">w</span></li>
+                                    <li class="letter"  ><span for="che">e</span></li>
+                                    <li class="letter"  ><span for="chr">r</span></li>
+                                    <li class="letter"  ><span for="cht">t</span></li>
+                                    <li class="letter"  ><span for="chy">y</span></li>
+                                    <li class="letter"  ><span for="chu">u</span></li>
+                                    <li class="letter"  ><span for="chi">i</span></li>
+                                    <li class="letter"  ><span for="cho">o</span></li>
+                                    <li class="letter"  ><span for="chp">p</span></li>
+                                    <li class="symbol"><span class="off" for="ch[">[</span><span class="on" for="ch{" >{</span></li>
+                                    <li class="symbol"><span class="off" for="ch]">]</span><span class="on" for="ch}" >}</span></li>
+                                    <li class="symbol lastitem"><span class="off" for="ch\\">\</span><span class="on" for="ch|">|</span></li>
+                                    <li class="capslock">caps lock</li>
+                                    <li class="letter"  ><span for="cha" >a</span></li>
+                                    <li class="letter"  ><span for="chs" >s</span></li>
+                                    <li class="letter"  ><span for="chd" >d</span></li>
+                                    <li class="letter"  ><span for="chf" >f</span></li>
+                                    <li class="letter"  ><span for="chg" >g</span></li>
+                                    <li class="letter"  ><span for="chh" >h</span></li>
+                                    <li class="letter"  ><span for="chj" >j</span></li>
+                                    <li class="letter"  ><span for="chk" >k</span></li>
+                                    <li class="letter"  ><span for="chl" >l</span></li>
+                                    <li class="symbol"><span class="off" for="ch;">;</span><span class="on" for="ch:">:</span></li>
+                                    <li class="symbol"><span class="off" for="ch-single">'</span><span class="on" for='ch"'>&quot;</span></li>
+                                    <li class="return lastitem"><span>return</span></li>
+                                    <li class="left-shift"><span>shift</span></li>
+                                    <li class="letter"  ><span for="chz" >z</span></li>
+                                    <li class="letter"  ><span for="chx" >x</span></li>
+                                    <li class="letter"  ><span for="chc" >c</span></li>
+                                    <li class="letter"  ><span for="chv" >v</span></li>
+                                    <li class="letter"  ><span for="chb" >b</span></li>
+                                    <li class="letter"  ><span for="chn" >n</span></li>
+                                    <li class="letter"  ><span for="chm" >m</span></li>
+                                    <li class="symbol"><span class="off" for="ch," >,</span><span class="on"for="ch<" >&lt;</span></li>
+                                    <li class="symbol"><span class="off" for="ch." >.</span><span class="on"for="ch>" >&gt;</span></li>
+                                    <li class="symbol"><span class="off" for="ch/" >/</span><span class="on"for="ch?" >?</span></li>
+                                    <li class="right-shift lastitem"><span>shift</span></li>
+                                    <li class="space lastitem"  ><span for="ch ">&nbsp;</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="work">
+                <div  class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img clas="card-img-top" src="https://naturalintelligence.github.io/Stubmatic/img/stubmatic_logo.png">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title">Stubmatic</div>
+                                    <div class="card-text">Some description</div>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img clas="card-img-top" src="https://github.com/NaturalIntelligence/fast-xml-parser/blob/master/static/img/fxp_logo.png">
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card-title">Fast XML Parser</div>
+                                        <div class="card-text">Parse XML to JS/JSON and vice versa without any dependency. Fastest option for backend and frontend.</div>  
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img clas="card-img-top" src="https://naturalintelligence.github.io/Stubmatic/img/stubmatic_logo.png">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title">Stubmatic</div>
+                                    <div class="card-text">Some description</div>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                
+                </div>
+            </section>
+            <section class="supporter">
+                <h1 class="dark-heading">Do you know?</h1>
+                <div  class="container">
+                    <div  class="row">
+                        <ul>
+                            <li>All projects mentioned above are FREE and OPEN SOURCE.</li>
+                            <li>Stubmatic can help you to mock binary responses as well.</li>
+                            <li>There are more than 7k+ downloads per week of Fast XML parser.</li>
+                            <li>There are more than 3000 projests using above projects worldwild.</li>
+                        </ul>
+                    </div>
+                </div>
+                <h1 class="dark-heading">Supporters</h1>
+                <div  class="container">
+                    We've one anonymous backer supporting Fast XML parser.
+                </div>
+            </section>
+            <section class="work">
+                <div  class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img clas="card-img-top" src="https://naturalintelligence.github.io/Stubmatic/img/stubmatic_logo.png">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title">Stubmatic</div>
+                                    <div class="card-text">Some description</div>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img clas="card-img-top" src="https://github.com/NaturalIntelligence/fast-xml-parser/blob/master/static/img/fxp_logo.png">
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card-title">Fast XML Parser</div>
+                                        <div class="card-text">Parse XML to JS/JSON and vice versa without any dependency. Fastest option for backend and frontend.</div>  
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img clas="card-img-top" src="https://naturalintelligence.github.io/Stubmatic/img/stubmatic_logo.png">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title">Stubmatic</div>
+                                    <div class="card-text">Some description</div>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+            <section class="supporter">
+                <h1 class="dark-heading">Do you know?</h1>
+                <div  class="container">
+                    <div  class="row">
+                        <ul>
+                            <li>All projects mentioned above are FREE and OPEN SOURCE.</li>
+                            <li>Stubmatic can help you to mock binary responses as well.</li>
+                            <li>There are more than 7k+ downloads per week of Fast XML parser.</li>
+                            <li>There are more than 3000 projests using above projects worldwild.</li>
+                        </ul>
+                    </div>
+                </div>
+                <h1 class="dark-heading">Supporters</h1>
+                <div  class="container">
+                    We've one anonymous backer supporting Fast XML parser.
+                </div>
+            </section>
+
+            <section id="supporters">
+                    <div  class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+    
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            <!-- Place this tag where you want the button to render. -->
+            
+
+            <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+            <script type="text/javascript" src="js/jquery-confirm.min.js"></script>
+            <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+            <!-- <script type="text/javascript" src="js/riot.min.js"></script>
+            <script type="text/javascript" src="js/riot+compiler.min.js"></script> -->
+
+            <script type="text/javascript" src="js/typewriter.js"></script>
+            <script src="tags/shabdawali.js"></script> 
+
+            <script>
+                var lettersWithShift = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "{", "}", "|", "<", "?", ">", ":", "'", "\"" ];
+                shabdawali($("#shabdawali"), {
+                    lines : lines,
+                    onCharChange : function(char){
+                        $("#keyboard .keyPressed").removeClass("keyPressed");
+                        if(lettersWithShift.indexOf(char) !== -1){
+                            $("#keyboard li.left-shift").addClass("keyPressed");
+                        }
+                        if(char === "BS"){
+                            $("#keyboard li.delete").addClass("keyPressed");
+                        }else if(char === "DEL"){
+                            $("#keyboard li.delete").addClass("keyPressed");
+                        }else if(char === "CR"){
+                            $("#keyboard li.return").addClass("keyPressed");
+                        }else{
+                            if(char.indexOf("'") === -1) 
+                                $("[for='ch"+char+"']").parent("li").addClass("keyPressed");
+                        }
+
+                        setTimeout(function(){
+                            $("#keyboard .keyPressed").removeClass("keyPressed");
+                        },500);
+                    },
+                    onLineChange : function(){
+                        $("#keyboard li.return").addClass("keyPressed");
+                        setTimeout(function(){
+                            $("#keyboard .keyPressed").removeClass("keyPressed");
+                        },400);
+                    },
+                });
+            </script>
+    </body>
+</html>
