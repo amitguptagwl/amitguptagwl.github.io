@@ -4,7 +4,7 @@ var lines = [
     'I have worked in India, Japan, and England',
     'I\'ve 8.5+ years industrial experience and 2 years independent opensource development experience.',
     'There are few things which are on priority for me : security, performance, response, usability, and improvement',
-    'I prefer to work on Linux OS.',
+    'I prefer to work on Linux.',
     'I\'ve contributed in many opensource projects',
     'I\'m helping many developers for their first time contribution to opensource projects. Contact me if you need any support.',
     'I love writing algorithms,  Regular Expressions and SQL queries',
@@ -21,4 +21,5 @@ var lines = [
     'I would be happy to know more about you and to take your feedback',
     'You can sponsor any project of your choice. Tell me the medium you\'ll prefer',
     'My first Open source project was \'Grapes\'. It is flexible regular expression engine for Java' ,
+    'I\'m really thankful to the people who inspired me for the opensource development.'
 ];
