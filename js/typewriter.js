@@ -16,5 +16,6 @@ var lines = [
     'Scroll down to see some of the opensource projects I\'ve made. Your feedback is really important.',
     'If you like my work, you can write a recommendation on linkedin, start my projects on Gihub, contribute to any project you want, buy me some time, or just mail me.', 
     'You can sponsor any project of your choice. Tell me the medium you\'ll prefer',
+    'If you believe in technology more than your goal, don\'t hire me',
     'I\'m really thankful to the people who inspired me for the opensource development.'
 ];
