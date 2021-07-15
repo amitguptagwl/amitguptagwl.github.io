@@ -1,0 +1,331 @@
+<html>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121064523-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-121064523-1');
+</script>
+            <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+            <link rel="stylesheet" type="text/css" href="css/jquery-confirm.min.css">
+            <link rel="stylesheet" type="text/css" href="css/kb.css">
+            <link rel="stylesheet" type="text/css" href="css/fontello.css">
+            <link rel="stylesheet" type="text/css" href="css/product.css">
+        <style>
+            body{
+                font-family: "Montserrat", sans-serif;
+            }
+            #mainNav{
+                height: 50px;
+                background-color: #101010;
+                position: fixed;
+                z-index: 10;
+                width: 100vw;
+            }
+            #about{
+                /* height: calc(100vh - 20px); */
+                background-color: #101010;
+                color: white;
+                position: relative;
+                top:50px
+            }
+            #menu{
+                margin: 10px;
+            }
+            #menu a{
+                display: inline;
+                padding: 10px;
+                cursor: pointer;
+                color: gray;
+            }
+            #menu a:hover{
+                color: white;
+            }
+            #shabdawali{
+                text-align: center;
+                font-size: xx-large;
+            }
+            .feature-img{
+                width: 120px;
+            }
+            .feature-headline{
+                font-size: 18px;
+                font-weight: 700;
+                font-family: "Montserrat", sans-serif;
+                color: #999;
+            }
+            .feature-content{
+                font-size: 14px;
+                color: #999;
+                /* font-family: "Montserrat", sans-serif; */
+            }
+            .code-shadow{
+                box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+            }
+            .work .row{
+                margin: 30px;
+            }
+            .work{
+                background-color: #53d5ff;
+            }
+            .supporter{
+                background-color: #101010;
+                color: white;
+            }
+            .card {
+                border: 1px solid cadetblue;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                transition: 0.3s;
+            }
+            .card-img{
+                text-align: center;
+                margin: 20px 0;
+            }
+            .card-title{
+                font-weight: bold;
+            }
+            .card-img img{
+                height: 150px;
+            }
+            section{
+                padding: 100px 0; 
+            }
+            .dark-heading{
+                color: #484848; 
+                padding-left: 30px;
+            }
+            ul.list-inline{
+                display: inline-flex;
+            }
+            ul.list-inline li{
+                font-size: 1.5em;
+                margin: 10px;
+            }
+            ul.list-inline li a{
+                color: white;
+            }
+            .supporter .row{
+                line-height: 2;
+            }
+            .users img{
+                margin: 15px;
+            }
+        </style>
+    </head>
+    <body style="background-color: #f2f5f9;">
+            <!-- <h1>αɱιƚ ƙυɱαɾ ɠυρƚα</h1> -->
+            <!-- <img id="bg" src="imgs/bg.svg"> -->
+            <div id="mainNav" class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4 d-flex align-items-center">
+                        <!-- <a href="supporters.html" style="color:white">SUPPORTERS</a>  -->
+                    </div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <ul class="list-inline">
+                            <li>
+                                <a href="https://twitter.com/amitguptagwl" class="btn-social btn-outline"><i class="icon-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="http://stackoverflow.com/users/453767/amit-gupt" class="btn-social btn-outline"><i class="icon-stackoverflow"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/amitguptagwl" class="btn-social btn-outline"><i class="icon-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/amitguptagwl" class="btn-social btn-outline"><i class="icon-github-circled"></i></a>
+                            </li>
+                            <li>
+                                <a href="http://medium.com/@amitgupta.gwl/" class="btn-social btn-outline"><img src="https://cdn-images-1.medium.com/max/1600/1*emiGsBgJu2KHWyjluhKXQw.png" width="38px"></i></a>
+                            </li>
+                            <li>
+                                <a href="mailto:contact@amitkumargupta.work" class="btn-social btn-outline"><i class="icon-mail-alt"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <!-- Introduction section using keyboard typing -->
+            <header id="about" style="min-height: 300px;">
+                <div  class="container">
+                    <div style="font-size: 100px;">Cytorus</div>
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            Forget about the limitations of regular E2E testing frameworks.
+                            Be rapid and innovative with Cytorus.
+                        </div>
+                        <!-- <div class="col-2">
+                            <img style="width: 80px;" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.flaticon.com%2Ficons%2Fpng%2F512%2F1132%2F1132071.png&f=1&nofb=1">
+                        </div> -->
+                    </div>
+                </div>
+                <div class="slant" style="background-image: url('imgs/slant.svg');"></div>
+
+            </header>
+
+            <section>
+                <div  class="container">
+                    <div class="row text-center ">
+                        <div class="col-3 align-self-center">
+                            <img class='feature-img' src="imgs/focused.png" style="width:100px">
+                        </div>
+                        <div class="col-3 align-self-center">
+                            <img class='feature-img' src="imgs/parallel.png">
+                        </div>
+                        <div class="col-3 align-self-center">
+                            <img class='feature-img' src="imgs/cypress.png">
+                        </div>
+                        <div class="col-3 align-self-center">
+                            <img class='feature-img' src="imgs/cucumon.png">
+                        </div>
+                    </div>
+                    <div class="row feature-headline text-center">
+                        <div class="col-3">
+                            Focused
+                        </div>
+                        <div class="col-3">
+                            Parallel
+                        </div>
+                        <div class="col-3">
+                            Cypress
+                        </div>
+                        <div class="col-3">
+                            Cucumon
+                        </div>
+                </div>
+                    <div class="row feature-content text-center">
+                        <div class="col-3">
+                            Run what you want
+                        </div>
+                        <div class="col-3">
+                            Run tests in parallel locally
+                        </div>
+                        <div class="col-3">
+                            Run using Cypress
+                        </div>
+                        <div class="col-3">
+                            Write with Cucumon
+                        </div>
+                </div>
+            </section>
+            
+            <section>
+                <div  class="container">
+                    <h2 style="color: #f04766;">Run particular</h2>
+                    <div class="row" style="line-height: 30px;">
+                        <div class="col-6">
+                            <ul class="mt-5" >
+                                <li> Run tests by their position in a feature file </li>
+                                <li> Run tests for a story </li>
+                                <li> Run tests using a tag expression </li>
+                                <li> Run tests for a set of feature files </li>
+                            </ul>
+                        </div>
+                        <div class="col-6 rounded p-3 code-shadow" style="background: black;">
+                            <div>
+                                <pre class="m-2" style="color: white;">
+$ cytorus run --only "3,4" --spec "path/of/file.feature"
+$ cytorus run --skip "3,4" --spec "path/of/file.feature"
+$ cytorus run --story "ABCD-1234"
+$ cytorus run --tag "@all but not @wip"
+$ cytorus run failing
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div  class="container">
+                    <h2 style="color: #f04766;">Quick result</h2>
+                    <div class="row" style="line-height: 30px;">
+                        <div class="col-6">
+                            <ul class="mt-5" >
+                                <li> Run tests for a particular page </li>
+                                <li> Run tests from a particular page </li>
+                            </ul>
+                        </div>
+                        <div class="col-6 rounded p-3 code-shadow" style="background: black;">
+                            <div>
+                                <pre class="m-2" style="color: white;">
+$ cytorus run --story "ABCD-1234" --on "product page"
+$ cytorus run --from "product page"
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div  class="container">
+                    <h2 style="color: #f04766;">Threshold Strategy</h2>
+                    Threshold strategy is helpful to keep the CI pipeline green.
+                    <div class="row" style="line-height: 30px;">
+                        <div class="col-6">
+                            <ul class="mt-5" >
+                                <li> Fix old failling tests gradually </li>
+                                <li> Handle timebound tests </li>
+                            </ul>
+                        </div>
+                        <div class="col-6 rounded p-3 code-shadow" style="background: black;">
+                            <div>
+                                <pre class="m-2" style="color: white;">
+[{
+    tagExpression: "@timebound but not @wip" ,
+    min: "100%",
+    when: () => (new Date()).getHours() < 17
+}]
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+           
+            <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+            <script type="text/javascript" src="js/jquery-confirm.min.js"></script>
+            <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+
+            <script type="text/javascript" src="js/typewriter.js"></script>
+            <script src="tags/shabdawali.js"></script> 
+
+            <script>
+                var lettersWithShift = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "{", "}", "|", "<", "?", ">", ":", "'", "\"" ];
+                shabdawali($("#shabdawali"), {
+                    lines : lines,
+                    onCharChange : function(char){
+                        $("#keyboard .keyPressed").removeClass("keyPressed");
+                        if(lettersWithShift.indexOf(char) !== -1){
+                            $("#keyboard li.left-shift").addClass("keyPressed");
+                        }
+                        if(char === "BS"){
+                            $("#keyboard li.delete").addClass("keyPressed");
+                        }else if(char === "DEL"){
+                            $("#keyboard li.delete").addClass("keyPressed");
+                        }else if(char === "CR"){
+                            $("#keyboard li.return").addClass("keyPressed");
+                        }else{
+                            if(char.indexOf("'") === -1) 
+                                $("[for='ch"+char+"']").parent("li").addClass("keyPressed");
+                        }
+
+                        setTimeout(function(){
+                            $("#keyboard .keyPressed").removeClass("keyPressed");
+                        },500);
+                    },
+                    onLineChange : function(){
+                        $("#keyboard li.return").addClass("keyPressed");
+                        setTimeout(function(){
+                            $("#keyboard .keyPressed").removeClass("keyPressed");
+                        },400);
+                    },
+                });
+            </script>
+    </body>
+</html>

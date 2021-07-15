@@ -1,0 +1,11 @@
+.slant{
+    position: absolute;
+width: calc(100% + 2px);
+height: 380px;
+bottom: -2px;
+left: -2px;
+z-index: 1;
+background-size: cover;
+background-position: left top;
+background-repeat: no-repeat;
+}
