@@ -246,15 +246,21 @@ $ cytorus run failing
                     <div class="row" style="line-height: 30px;">
                         <div class="col-6">
                             <ul class="mt-5" >
-                                <li> Run tests for a particular page </li>
-                                <li> Run tests from a particular page </li>
+                                <li> Quick test: Run tests for a particular page </li>
+                                <li> Test further Integration impact: Run tests from a particular page </li>
+                                <li> Test integration backward: Run tests up to a particular page </li>
+                                <li> Minimal integration tests: Run tests from a particular page to it's next page only</li>
                             </ul>
                         </div>
                         <div class="col-6 rounded p-3 code-shadow" style="background: black;">
                             <div>
                                 <pre class="m-2" style="color: white;">
 $ cytorus run --story "ABCD-1234" --on "product page"
+$ cytorus run --on "product page"
 $ cytorus run --from "product page"
+$ cytorus run --from "product page" --till 2
+$ cytorus run --not-via "product page"
+$ cytorus run --via "product page"
                                 </pre>
                             </div>
                         </div>
@@ -292,40 +298,5 @@ $ cytorus run --from "product page"
             <script type="text/javascript" src="js/jquery-confirm.min.js"></script>
             <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
 
-            <script type="text/javascript" src="js/typewriter.js"></script>
-            <script src="tags/shabdawali.js"></script> 
-
-            <script>
-                var lettersWithShift = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "{", "}", "|", "<", "?", ">", ":", "'", "\"" ];
-                shabdawali($("#shabdawali"), {
-                    lines : lines,
-                    onCharChange : function(char){
-                        $("#keyboard .keyPressed").removeClass("keyPressed");
-                        if(lettersWithShift.indexOf(char) !== -1){
-                            $("#keyboard li.left-shift").addClass("keyPressed");
-                        }
-                        if(char === "BS"){
-                            $("#keyboard li.delete").addClass("keyPressed");
-                        }else if(char === "DEL"){
-                            $("#keyboard li.delete").addClass("keyPressed");
-                        }else if(char === "CR"){
-                            $("#keyboard li.return").addClass("keyPressed");
-                        }else{
-                            if(char.indexOf("'") === -1) 
-                                $("[for='ch"+char+"']").parent("li").addClass("keyPressed");
-                        }
-
-                        setTimeout(function(){
-                            $("#keyboard .keyPressed").removeClass("keyPressed");
-                        },500);
-                    },
-                    onLineChange : function(){
-                        $("#keyboard li.return").addClass("keyPressed");
-                        setTimeout(function(){
-                            $("#keyboard .keyPressed").removeClass("keyPressed");
-                        },400);
-                    },
-                });
-            </script>
     </body>
 </html>
