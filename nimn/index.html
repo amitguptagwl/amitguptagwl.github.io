@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119928829-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-119928829-1');
+        </script>
+        <link rel="stylesheet" href="css/jquery-confirm.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            #logo{
+                height: 300px;
+            }
+            #subtitle{
+                font-size: 2em;
+                padding-left: 25px
+            }
+            #link-button{
+                bottom: 5px;
+                font-size: 1.5em;
+                cursor: pointer;
+                padding-left: 25px;
+            }
+            #desc{
+                padding-left: 25px;
+                width: 450px;
+            }
+            .data-button{
+                background-color: #05a2a9;
+                color: white;
+                width: 200px;
+                font-size: 1.2em;
+            }
+            #dataBox{
+                height:60vh; 
+                width: 100%;
+            }
+            html, body {
+                height: calc(100vh - 50px);
+            }
+            body {
+                margin: 0;
+                color: cadetblue;
+            }
+            .flex-container {
+                height: calc(100vh - 50px);
+                display: -webkit-box;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .m-row {
+                width: auto;
+            }
+            .flex-item {
+                text-align: center;
+            }
+
+        </style>
+    </head>
+    <body>
+            <div class="flex-container">
+                <div class="m-row"> 
+                    <div class="flex-item">
+                        <a href="https://github.com/nimndata/spec" target="_blank">
+                            <img src="img/nimn.svg" id="logo">
+                        </a>
+                    </div>
+                    <div class="flex-item" id="subtitle">Just Data</div>
+                    <div class="flex-item" id="desc"><p>Nimn data format can save upto 85% of space / bandwidth in comparison of XML or JSON data.</p></div>
+                </div>
+            </div>
+            <div class="m-row"> 
+                <div class="flex-item" id="link-button">Try it online with your Data</div>
+            </div>
+
+            <script src="js/jquery-3.2.1.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/jquery-confirm.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/fast-xml-parser/3.10.0/parser.min.js"></script>
+            <script src="https://cdn.rawgit.com/nimndata/nimnjs-schema-builder/1f50f478/dist/nimn-schema-builder.js"></script>
+            <script src="https://cdn.rawgit.com/nimndata/nimnjs/7cf21608/dist/nimn.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+            <script>
+                $(function(){
+                    $("#link-button").click(function(){
+                        $.dialog({
+                            title: 'Check how much it can save',
+                            columnClass: 'col-md-6 col-md-offset-6 col-xs-4 col-xs-offset-8',
+                            containerFluid: true, // this will add 'container-fluid' instead of 'container'
+                            content: `<div style="text-align:center;">
+                                    <div><textarea id="dataBox" placeholder="Paste your XML or JSON data here"></textarea></div>
+                                    <br>
+                                    <div><button class="btn data-button" onclick="javascript:convert()">Show me comparison</button></div><br>
+                                <div>`
+                        });
+                    });
+                });
+
+                function convert(){
+                    var data = $("#dataBox").val();
+                    if(data.trim().length === 0){
+                        showError();
+                    }else{
+                        try{
+                            var jsonData = JSON.parse( data );
+                            jsonToNimn(jsonData, "JSON", JSON.stringify(jsonData).length);
+                        }catch(e){
+                            //assume it XML
+                            data = data.replace(/>\s*</g, "><");
+                            if(parser.validate(data) === true){
+                                var jsonData = parser.parse(data,xmlOptions);
+                                jsonToNimn(jsonData, "XML", data.length);
+                            }else{
+                                showError();
+                            }
+                        }
+                    }
+                }
+
+                function jsonToNimn(jsonData, type, len){
+                    var schema = nimn.buildSchema( nimnSchemaBuilder.build(jsonData) );
+                    var result = nimn.stringify(schema, jsonData);
+
+                    displayData(type,result, len);
+                }
+
+                var xmlOptions = {
+                    ignoreAttributes : false,
+                    ignoreNameSpace : false,
+                    allowBooleanAttributes : true,
+                    parseNodeValue : false,
+                    parseAttributeValue : false,
+                    trimValues: true
+                };
+
+                function displayData(type,nimndata, v1){
+                    var v2 = nimndata.length;
+                    var diff = ((v1 - v2) * 100 )/ v1;
+                    diff = Math.round(diff * 100) / 100;
+                    $.dialog({
+                        title: "<span style='color: #008299'>Congrates!!</span>",
+                        columnClass: 'col-md-8 col-md-offset-4 col-xs-4 col-xs-offset-8',
+                        containerFluid: true,
+                        content: `<p>You've saved ${diff}% data.</p>
+                            <p>You can save more when you have fixed values field like enum or enable field level compression.</p>
+                            <canvas id="myChart" ></canvas>
+                        `,
+                        onContentReady : function(){
+                            showGraph(type, v1, v2);
+                        },
+                        escapeKey: true,
+                        backgroundDismiss: true
+                    });
+                }
+
+                function showError(){
+                    $.dialog({
+                        title: "Sorry!",
+                        content: "Invalid or corrupted Data"
+                    });   
+                }
+
+                function showGraph(type, v1, v2){
+                    var ctx = document.getElementById("myChart").getContext('2d');
+                        var myChart = new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: [type, "Nimn"],
+                                datasets: [{
+                                    label: 'Data Size in bytes',
+                                    data: [v1, v2],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132)',
+                                        'cadetblue'
+                                    ]
+                                }]
+                            },
+                            options: {
+                                //responsive: false
+                            }
+                        });
+                }
+            </script>
+    </body>
+</html>
